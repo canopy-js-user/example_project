@@ -1,0 +1,9 @@
+install:
+script:
+- npm install -g canopy-js
+- CANOPY_LOGGING=true canopy build --for-static-assets
+after_success:
+- bash script/deploy.sh
+env:
+  global:
+    secure: LONG_ENCRYPTED_VALUE
